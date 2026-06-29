@@ -120,7 +120,7 @@ Depuis `backend/` :
 ## Roadmap
 
 - [x] Initialisation backend — Node.js + Express + Prisma 7
-- [ ] Initialisation frontend — Vite + React
+- [x] Initialisation frontend — Vite + React
 - [ ] Authentification — inscription / connexion / déconnexion
 - [ ] Création de table de jeu
 - [ ] Gestion du planning des sessions
