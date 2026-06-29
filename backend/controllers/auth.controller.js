@@ -1,5 +1,5 @@
 import {prisma} from "../lib/prisma.js"
-import {CréerUnCompte} from "../services/auth.services.js"
+import {CréerUnCompte,login} from "../services/auth.services.js"
 
 //Controller de créations de compte
 
@@ -32,4 +32,26 @@ export const CréerNouveauCompte = async(req,res)=>{
             message: 'Erreur lors de l\'inscription',
             error: error.message});
     }
-}
+};
+
+export const loginController = async(req,res)=>{
+    try{
+        const {email,password}=req.body
+        const resultat = await login(email,password);
+
+        if(!resultat){
+            return res.status(400).json({message: "Email ou Mot de passe incorrect !"});
+        }
+
+        res.status(200).json({
+            token: resultat.token,
+            User: {
+                id: resultat.utilisateurExistant.id,
+                email: resultat.utilisateurExistant.email,
+                name: resultat.utilisateurExistant.name,
+            }
+        });
+    }catch(error){
+                res.status(500).json({ message: 'Erreur lors de la connexion', error: error.message });
+    }
+};
