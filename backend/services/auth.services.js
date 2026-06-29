@@ -34,3 +34,19 @@ export const login = async(email,password)=>{
             }
         }
 };
+
+//Fonction de suppression de compte
+
+export const suppressionCompte = async(id)=>{
+
+    const idInt = parseInt(id)
+    const idExistant = await prisma.User.findUnique({where:{id:idInt}});
+
+    if(!idExistant){
+        return null
+    }
+    else{
+        const suppression = await prisma.User.delete({ where: { id:idInt } });
+        return `${idExistant.name} Compte supprimé`
+    };
+};

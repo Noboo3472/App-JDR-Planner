@@ -1,9 +1,10 @@
 import express from "express"
-import {CréerNouveauCompte,loginController} from "../controllers/auth.controller.js"
+import {CréerNouveauCompte,loginController,suppressionController} from "../controllers/auth.controller.js"
 
 const router = express.Router();
 
 router.post('/signin', CréerNouveauCompte);
-router.get('/login',loginController)
+router.post('/login',loginController)
+router.delete('/delete/:id', suppressionController)
 
 export default router;
