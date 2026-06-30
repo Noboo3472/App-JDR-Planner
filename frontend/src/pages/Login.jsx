@@ -52,6 +52,9 @@ function Login(){
                     <input type="submit" name="connexion" id="connexion" value={"Se connecter"}/>
                 </div>
             </form>
+            <div>
+                <input type="button" name="créerCompte" id="créerCompte" value={"Créer un compte"} onClick={()=>navigate('/signin')}/>
+            </div>
         </div>
     )
 }
