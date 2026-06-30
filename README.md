@@ -121,7 +121,7 @@ Depuis `backend/` :
 
 - [x] Initialisation backend — Node.js + Express + Prisma 7
 - [x] Initialisation frontend — Vite + React
-- [ ] Authentification — inscription / connexion / déconnexion
+- [x] Authentification — inscription / connexion / déconnexion
 - [ ] Création de table de jeu
 - [ ] Gestion du planning des sessions
 - [ ] *(Optionnel)* Notification Discord lors de l'ouverture d'un créneau
