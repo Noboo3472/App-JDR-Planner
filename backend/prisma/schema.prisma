@@ -18,4 +18,30 @@ model User {
   password  String
   name      String?
   createdAt DateTime @default(now())
+
+  table Table[]
+  joueurs Joueur[]
+}
+
+model Table {
+  id Int     @id @default(autoincrement())
+  mjId Int
+  nameTable String
+  description String?
+  createdAt DateTime @default(now())
+
+  mjUser User @relation(fields: [mjId], references: [id])
+
+  Joueur Joueur[]
+}
+
+model Joueur {
+  id  Int @id @default(autoincrement())
+  joueurId Int
+  tableId Int
+
+  joueur User @relation(fields: [joueurId],references: [id])
+  table Table @relation(fields: [tableId],references: [id], onDelete: Cascade)
+
+  @@unique([joueurId, tableId])
 }
