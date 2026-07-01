@@ -1,4 +1,4 @@
-# 🎲 App-JDR-Planner
+# App-JDR-Planner
 
 Application web fullstack permettant aux groupes de joueurs de JDR de trouver des créneaux communs pour leurs sessions, en fonction des disponibilités ouvertes par le Maître de Jeu.
 
